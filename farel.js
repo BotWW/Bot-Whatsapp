@@ -1327,8 +1327,6 @@ menu = `┏━━⬣ 𝗜𝗡𝗙𝗢 𝗔𝗡𝗗𝗔
 │${anunya} ${prefix}wangy
 │${anunya} ${prefix}ttt
 │${anunya} ${prefix}delttt
-│${anunya} ${prefix}join
-│${anunya} ${prefix}tts [ kodebahasa teks ]
 │${anunya} ${prefix}truth
 │${anunya} ${prefix}dare
 ╰❒
@@ -1765,59 +1763,6 @@ break
                 })
                 console.log(res)
                 sendMediaURL(from, `${res.result.nowatermark}`)
-                break
-            case 'tts':
-                if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			    try{
-                if (args.length > 1) {
-                const gtts = require('./lib/gtts')(args[0])
-                if (args.length < 2) return farel.sendMessage(from, 'Textnya mana gan?', text, {quoted: mek})
-                ngab = budy.slice(7)
-                ranm = getRandom('.mp3')
-                rano = getRandom('.ogg')
-                ngab.length > 600
-                ? reply('Textnya kebanyakan gan')
-                : gtts.save(ranm, ngab, function() {
-                exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
-                fs.unlinkSync(ranm)
-                buff = fs.readFileSync(rano)
-                if (err) return reply('Gagal gan:(')
-                farel.sendMessage(from, buff, audio, {quoted:mek,ptt:true})
-                fs.unlinkSync(rano)
-                })
-                })
-	            } else if ( args.length === 1 ){
-		        ngab = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
-		        const gtts = require('./lib/gtts')(args[0])
-                ranm = getRandom('.mp3')
-                rano = getRandom('.ogg')
-                gtts.save(ranm, ngab, function() {
-                exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
-                fs.unlinkSync(ranm)
-                buff = fs.readFileSync(rano)
-                if (err) return reply(mess.error.api)
-                farel.sendMessage(from, buff, audio, {quoted:mek,ptt:true})
-                fs.unlinkSync(rano)
-                })
-                })
-                }
-                } catch (e){
-	            reply(mess.error.api)
-                }
-                break 
-            case 'join':
-                if (!mek.key.fromMe) return reply('only premium')
-                try {
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(mess.Iv)
-                hen = args[0]
-                if (!q) return fakestatus('Masukan link group')
-                var codeInvite = hen.split('https://chat.whatsapp.com/')[1]
-                if (!codeInvite) return reply ('Pastikan link sudah benar!')
-                var response = await farel.acceptInvite(codeInvite)
-                reply('Berhasil')
-                } catch {
-                reply('Link error')
-                }
                 break
             case "groupinfo":
                 if (!isGroup) return;
