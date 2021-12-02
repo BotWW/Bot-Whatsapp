@@ -42,7 +42,7 @@ const
 		relayWAMessage
 	} = require("@adiwajshing/baileys")
 const simple = require('./lib/simple.js')
-const WAConnection = simple.WAConnection(_WAConnection)
+const WAConnection = simple.WAConnection(_WAConnectio
 const qrcode = require('qrcode-terminal')
 const qrkode = require("qrcode")
 const imageToBase64 = require('image-to-base64')
@@ -51,7 +51,7 @@ const fs = require("fs")
 const axios = require("axios")
 const ffmpeg = require('fluent-ffmpeg')
 const request = require('request')
-const util = require('util')
+const util = require('uti
 const hx = require('hxz-api')
 const base64Img = require('base64-img')
 const ms = require('parse-ms')
@@ -61,7 +61,7 @@ const brainly = require('brainly-scraper')
 const ig = require('insta-fetcher')
 const cheerio = require('cheerio')
 const fromData = require('form-data')
-const os = require('os')
+const os = require('os'
 const translate = require('@vitalets/google-translate-api')
 const ggs = require('google-it')
 const googleImage = require('g-i-s')
