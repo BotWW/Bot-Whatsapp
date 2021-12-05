@@ -1435,7 +1435,7 @@ break
 
 //━━━━━━━━━━━━━━━[ BATAS ]━━━━━━━━━━━━━━━━━//
 
-					case 's':
+					case 'sticker1':
 						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 							const media = await farel.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
