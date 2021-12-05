@@ -1379,7 +1379,7 @@ footerText:`${anu}`,
 buttons: gbutsan2,
 headerType: 1
 }
-farel.sendMessage(from, sendBtnmenu, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [dtod,otod,stod], {quoted:fake1}})
+farel.sendMessage(from, sendBtnmenu, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [dtod,otod,stod]}, {quoted:fake1}})
 break
 case 'verify':
 if (isRegistered) return sticOk(from)
